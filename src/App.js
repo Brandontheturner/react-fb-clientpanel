@@ -1,12 +1,22 @@
 import React, { Component } from "react";
+import AppNavbar from "./components/layout/AppNavbar";
+import Dashboard from "./components/layout/Dashboard";
 import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <div className='App'>
-        <h1>FireBase CLientPanel</h1>
-      </div>
+      <Router>
+        <div className='App'>
+          <AppNavbar />
+          <div className='container'>
+            <Switch>
+              <Route exact path='/' component={Dashboard} />
+            </Switch>
+          </div>
+        </div>
+      </Router>
     );
   }
 }
